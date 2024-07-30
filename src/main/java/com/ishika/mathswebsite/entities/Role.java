@@ -1,6 +1,6 @@
 package com.ishika.mathswebsite.entities;
+import jakarta.persistence.*;
 
-import javax.persistence.*;
 import java.util.Set;
 @Entity
 @Table(name="role")

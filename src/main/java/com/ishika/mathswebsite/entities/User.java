@@ -1,5 +1,5 @@
 package com.ishika.mathswebsite.entities;
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 
 import java.util.Set;

@@ -1,5 +1,6 @@
 package com.ishika.mathswebsite.service;
 
+import com.ishika.mathswebsite.config.BasicConfiguration;
 import com.ishika.mathswebsite.entities.User;
 import com.ishika.mathswebsite.repositories.RoleRepository;
 import com.ishika.mathswebsite.repositories.UserRepository;
@@ -10,12 +11,15 @@ import java.util.HashSet;
 
 @Service
 public class UserServiceImpl implements UserService {
+    private final BCryptPasswordEncoder bCryptPasswordEncoder;
     @Autowired
     private UserRepository userRepository;
     @Autowired
     private RoleRepository roleRepository;
     @Autowired
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
+    public UserServiceImpl(BCryptPasswordEncoder bCryptPasswordEncoder) {
+        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+    }
 
 @Override
     public void save(User user){
